@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct AboutPark: View {
+    var nameTxt:String
+    var aboutTxt:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack(alignment:.leading){
+            Text(nameTxt)
+                .font(.subheadline)
+                .fontWeight(.bold)
+            Text(aboutTxt)
+                .font(.body)
+                .foregroundColor(Color.gray)
+                .multilineTextAlignment(.leading)
+
+        }
+            }
 }
 
 struct AboutPark_Previews: PreviewProvider {
     static var previews: some View {
-        AboutPark()
+        AboutPark(nameTxt:"name", aboutTxt: "about text goes here")
     }
 }

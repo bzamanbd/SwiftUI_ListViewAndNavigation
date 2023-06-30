@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ParkAndCityWithDivider: View {
+    var name:String
+    var park:String
+    var city:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack(alignment: .leading){
+            Text(name)
+                .font(.title2)
+                .fontWeight(.bold)
+            HStack{
+                Text(park)
+                Spacer()
+                Text(city)
+                    
+            }
+            .font(.caption)
+            .foregroundColor(Color.gray)
+            Divider()
+            
+        }.padding()
+            }
 }
 
 struct ParkAndCityWithDivider_Previews: PreviewProvider {
     static var previews: some View {
-        ParkAndCityWithDivider()
+        ParkAndCityWithDivider(name:"name", park: "park", city: "city")
     }
 }
